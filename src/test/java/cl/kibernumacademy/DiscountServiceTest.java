@@ -16,13 +16,13 @@ public class DiscountServiceTest {
     }
 
     @Test
-    @DisplayName("Test de descuentos mayor $100000")
+    //Test de descuentos mayor $100000//
 
     void testDescuento() {
 
         //Arrange
         double precio = 170000;
-        double esperado = 170000 * 0.15;
+        double esperado = precio * 0.85;
         //Act
         double resultado = discountService.calcularDescuento(precio);
         
@@ -32,12 +32,12 @@ public class DiscountServiceTest {
     }
 
     @Test
-    @DisplayName("Test de descuentos entre $50000 y $100000")
+    //Test de descuentos entre $50000 y $100000//
 
     void testDescuento_entre50000y100000() {
         //Arrange
         double precio = 70000;
-        double esperado = 70000 * 0.10;
+        double esperado = precio * 0.90;
         //Act
         double resultado = discountService.calcularDescuento(precio);
 
@@ -46,12 +46,12 @@ public class DiscountServiceTest {
     }
 
     @Test
-    @DisplayName("Test de descuentos menor de $50000 que no aplica")
+    //Test de descuentos menor de $50000 que no aplica//
 
     void testDescuento_menorDe50000() {
         //Arrange
         double precio = 49000;
-        double esperado = 0;
+        double esperado = precio;
         //Act
         double resultado = discountService.calcularDescuento(precio);
 
@@ -60,12 +60,12 @@ public class DiscountServiceTest {
     }
 
     @Test
-    @DisplayName("Test de descuentos entre $50000 y $100000")
+    //Test de descuentos borde $100000//
 
     void testDescuento_borde100000() {
         //Arrange
         double precio = 100000;
-        double esperado = 100000 * 0.10;
+        double esperado = precio * 0.90;
         //Act
         double resultado = discountService.calcularDescuento(precio);
 
@@ -74,12 +74,12 @@ public class DiscountServiceTest {
     }
 
     @Test
-    @DisplayName("Test de descuentos entre $50000 y $100000")
+   //Test de descuentos borde $50000//
 
     void testDescuento_borde50000() {
         //Arrange
         double precio = 50000;
-        double esperado = 50000 * 0.10;
+        double esperado = precio * 0.90;
         //Act
         double resultado = discountService.calcularDescuento(precio);
 
